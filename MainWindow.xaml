@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:fit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="АИС F.I.T." Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Image
+            HorizontalAlignment="Left"
+            Source="/logo.png"/>
+        <TextBlock
+            Text="АИС F.I.T."
+            FontSize="30"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+        <Grid
+            Background="#bae3e8"
+            Panel.ZIndex="-2"/>
+        <Grid
+            Grid.Row="2"
+            Background="#445c93"/>
+        <Frame
+            NavigationUIVisibility="Hidden"
+            ContentRendered="MainFrame_ContentRendered"
+            Grid.Row="1"
+            Name="MainFrame" />
+        <Button
+            Content="Назад"
+            Name="BtnBack"
+            HorizontalAlignment="Right"
+            Click="BtnBack_Click"/>
     </Grid>
 </Window>
