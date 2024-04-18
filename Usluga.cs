@@ -16,13 +16,13 @@ namespace fit
     {
         public Usluga()
         {
-            this.Kvitancyas = new HashSet<Kvitancya>();
+            this.Kvitancya = new HashSet<Kvitancya>();
         }
     
         public int Id { get; set; }
         public string Nazvanie { get; set; }
         public int Stoimost { get; set; }
     
-        public virtual ICollection<Kvitancya> Kvitancyas { get; set; }
+        public virtual ICollection<Kvitancya> Kvitancya { get; set; }
     }
 }

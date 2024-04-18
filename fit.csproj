@@ -65,21 +65,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="fit.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>fit.tt</DependentUpon>
-    </Compile>
     <Compile Include="FitWithContext.cs" />
     <Compile Include="Kvitancya.cs">
-      <DependentUpon>fit.tt</DependentUpon>
+      <DependentUpon>ModelFit3.tt</DependentUpon>
     </Compile>
     <Compile Include="Manager.cs" />
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>fit.tt</DependentUpon>
+    <Compile Include="ModelFit3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelFit3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>ModelFit3.tt</DependentUpon>
     </Compile>
     <Compile Include="Usluga.cs">
-      <DependentUpon>fit.tt</DependentUpon>
+      <DependentUpon>ModelFit3.tt</DependentUpon>
     </Compile>
     <Page Include="AddEditPage.xaml">
       <SubType>Designer</SubType>
@@ -100,16 +100,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="fit.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>fit.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="fit.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>fit.edmx</DependentUpon>
-    </Compile>
     <Compile Include="KvitancyaPage.xaml.cs">
       <DependentUpon>KvitancyaPage.xaml</DependentUpon>
     </Compile>
@@ -119,6 +109,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModelFit3.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelFit3.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelFit3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelFit3.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -136,12 +136,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="fit.edmx">
+    <EntityDeploy Include="ModelFit3.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>fit.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelFit3.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="fit.edmx.diagram">
-      <DependentUpon>fit.edmx</DependentUpon>
+    <None Include="ModelFit3.edmx.diagram">
+      <DependentUpon>ModelFit3.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -156,20 +156,22 @@
     <Resource Include="logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fit.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>fit.Context.cs</LastGenOutput>
-      <DependentUpon>fit.edmx</DependentUpon>
-    </Content>
-    <Content Include="fit.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>fit.edmx</DependentUpon>
-      <LastGenOutput>fit.cs</LastGenOutput>
-    </Content>
     <Resource Include="logo.ico" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelFit3.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelFit3.edmx</DependentUpon>
+      <LastGenOutput>ModelFit3.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelFit3.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelFit3.edmx</DependentUpon>
+      <LastGenOutput>ModelFit3.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

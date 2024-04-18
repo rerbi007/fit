@@ -23,22 +23,27 @@
             Text="ФИО клиента" />
         <TextBox
             x:Name="box"
-            Text="{Binding Name}"
+            Text="{Binding FioClienta}"
             MaxLength="100"
             Grid.Column="1"
             Margin="5,5,40,5" />
+        
         <TextBlock
             Text="Название услуги"
             Grid.Row="1" />
         <ComboBox
             x:Name="ComboUsluga"
-            ItemsSource="{Binding Source = {StaticResource Nazvanie}}"
+            SelectedItem="{Binding Usluga}"
+            SelectedIndex="1"
             Grid.Column="1"
-            Grid.Row="1" Margin="5,5,40,5"/>
+            Grid.Row="1" Margin="5,5,40,5"
+            SelectionChanged="ComboUsluga_SelectionChanged"
+            DisplayMemberPath="Nazvanie" />
         <TextBlock
             Text="Стоимость"
             Grid.Row="2" />
         <TextBlock
+            x:Name="TextBlockStoimost"
             Text="{Binding Stoimost}"
             Grid.Column="2"
             Grid.Row="2"

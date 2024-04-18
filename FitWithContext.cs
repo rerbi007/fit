@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace fit
 {
-    internal class FitEntities: fit3Entities
+    internal class FitEntities: ModelFit3
     {
-        private static fit3Entities _context;
+        private static ModelFit3 _context;
 
-        public static fit3Entities GetContext()
+        public static ModelFit3 GetContext()
         {
             if (_context == null)
-                _context = new fit3Entities();
+                _context = new ModelFit3();
             return _context;
         }
     }

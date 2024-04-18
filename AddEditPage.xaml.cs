@@ -30,31 +30,23 @@ namespace fit
                 _currentKvitancya = selectedKvitancya;
 
             DataContext = _currentKvitancya;
-
-            
-
+            ComboUsluga.ItemsSource = FitEntities.GetContext().Usluga.ToList();
             ComboUsluga.SelectedValue = 1;
 
-            FitEntities fitContext = new FitEntities();
-            ComboUsluga.ItemsSource = fitContext.Uslugas.ToList();
-
-            //List<Kvitancya> Usluga = FitEntities.GetContext().Kvitancyas.ToList();
-            //ComboUsluga.ItemsSource = Usluga;
-            ComboUsluga.SelectedIndex = 2;
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
 
         }
+
+        private void ComboUsluga_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ComboUsluga.SelectedItem != null)
+            {
+                var selectedService = (Usluga)ComboUsluga.SelectedItem;
+                TextBlockStoimost.Text = selectedService.Stoimost.ToString(); // Assuming Cost is a property of your Service entity
+            }
+        }
     }
 }
-
-//ComboUsluga.ItemsSource = FitEntities.GetContext().Kvitancyas.ToList();
-//private static FitEntities _context;
-//public static FitEntities GetContext()
-//{
-//    if (_context == null)
-//        _context = new FitEntities();
-//    return _context;
-//}

@@ -13,21 +13,20 @@ namespace fit
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class fit3Entities : DbContext
+    public partial class ModelFit3 : DbContext
     {
-
-        public fit3Entities()
-            : base("name=fit3Entities")
+        public ModelFit3()
+            : base("name=ModelFit3")
         {
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Kvitancya> Kvitancyas { get; set; }
-        public DbSet<sysdiagram> sysdiagrams { get; set; }
-        public DbSet<Usluga> Uslugas { get; set; }
+        public DbSet<Kvitancya> Kvitancya { get; set; }
+        public DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public DbSet<Usluga> Usluga { get; set; }
     }
 }

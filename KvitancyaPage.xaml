@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:fit"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="KvitancyaPage">
+      Title="KvitancyaPage"
+      IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -14,34 +15,32 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <DataGrid
-            x:Name="DGridHotels"
+            x:Name="DGridKvitancya"
             AutoGenerateColumns="False"
-            IsReadOnly="True">
+            IsReadOnly="True"
+            CellStyle="{StaticResource Body_Content_DataGrid_Centering}">
+            
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Header="ФИО клиента"
-                    Binding="{Binding Kvitancya.FioClienta}"
-                    Width="*"
-                    MaxWidth="160"/>
+                    Binding="{Binding FioClienta}"
+                    Width="Auto"/>
                 <DataGridTextColumn
-                    Header="Название услуги"
-                    Binding="{Binding Usluga.Nazvanie}"
-                    Width="*"
-                    MaxWidth="160"/>
+                    Header="Название услуги"                    
+                    Binding="{Binding Usluga1.Nazvanie}"
+                    Width="Auto"/>
+                <!--Binding="{Binding Usluga.Nazvanie}"-->
                 <DataGridTextColumn
                     Header="Стоимость"
-                    Binding="{Binding Kvitancya.Stoimost}"
-                    Width="*"
-                    MaxWidth="160"/>
+                    Binding="{Binding Stoimost}"
+                    Width="Auto"/>
                 <DataGridTextColumn
                     Header="Дата, Время"
-                    Binding="{Binding Kvitancya.DateTime}"
-                    Width="*"
-                    MaxWidth="160"/>
+                    Binding="{Binding DateTime}"
+                    Width="Auto"/>
                 <DataGridTemplateColumn
                     Header="Редактировать запись"
-                    Width="*"
-                    MaxWidth="160">
+                    Width="Auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button

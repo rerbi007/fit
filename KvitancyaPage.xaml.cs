@@ -23,6 +23,7 @@ namespace fit
         public KvitancyaPage()
         {
             InitializeComponent();
+            //DGridKvitancya.ItemsSource = FitEntities.GetContext().Kvitancya.ToList();
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
@@ -38,6 +39,15 @@ namespace fit
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility == Visibility.Visible)
+            {
+                FitEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                DGridKvitancya.ItemsSource = FitEntities.GetContext().Kvitancya.ToList();
+            }
         }
     }
 }
