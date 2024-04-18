@@ -37,7 +37,31 @@ namespace fit
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
+            StringBuilder errors = new StringBuilder();
 
+            if (string.IsNullOrWhiteSpace(_currentKvitancya.FioClienta))
+                errors.AppendLine("Укажите ФИО клиента");
+            if (_currentKvitancya.Usluga1 == null)
+                errors.AppendLine("Выберите услугу");
+
+            if (errors.Length > 0)
+            {
+                MessageBox.Show(errors.ToString());
+                return;
+            }
+
+            if (_currentKvitancya.Id == 0)
+                FitEntities.GetContext().Kvitancya.Add(_currentKvitancya);
+            try
+            {
+                FitEntities.GetContext().SaveChanges();
+                MessageBox.Show("Информация сохранена!");
+                Manager.MainFrame.GoBack();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void ComboUsluga_SelectionChanged(object sender, SelectionChangedEventArgs e)

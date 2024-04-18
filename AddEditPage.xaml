@@ -33,7 +33,7 @@
             Grid.Row="1" />
         <ComboBox
             x:Name="ComboUsluga"
-            SelectedItem="{Binding Usluga}"
+            SelectedItem="{Binding Usluga1}"
             SelectedIndex="1"
             Grid.Column="1"
             Grid.Row="1" Margin="5,5,40,5"

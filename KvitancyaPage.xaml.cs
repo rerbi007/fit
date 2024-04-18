@@ -28,7 +28,28 @@ namespace fit
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
+            var kvitancyasForRemoving = DGridKvitancya.SelectedItems.Cast<Kvitancya>().ToList();
 
+            if (MessageBox.Show($"Вы точно хотите удалить следующие {kvitancyasForRemoving.Count()} элементов?", "Внимание",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    foreach (Kvitancya item in kvitancyasForRemoving)
+                    {
+                        FitEntities.GetContext().Kvitancya.Remove(item);
+                    }
+                    //FitEntities.GetContext().Kvitancya.RemoveRange(kvitancyasForRemoving);
+                    FitEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Данные удалены!");
+
+                    DGridKvitancya.ItemsSource = FitEntities.GetContext().Kvitancya.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
