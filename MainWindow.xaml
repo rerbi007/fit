@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:fit"
         mc:Ignorable="d"
-        Title="АИС F.I.T." Height="563" Width="1000">
+        Title="АИС F.I.T." Height="590" Width="1048">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>

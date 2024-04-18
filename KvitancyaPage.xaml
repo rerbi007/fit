@@ -28,7 +28,7 @@
                 <DataGridTextColumn
                     Header="Название услуги"                    
                     Binding="{Binding Usluga1.Nazvanie}"
-                    Width="Auto"/>
+                    Width="*"/>
                 <!--Binding="{Binding Usluga.Nazvanie}"-->
                 <DataGridTextColumn
                     Header="Стоимость"
