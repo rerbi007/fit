@@ -32,11 +32,12 @@ namespace fit
             DataContext = _currentKvitancya;
             ComboUsluga.ItemsSource = FitEntities.GetContext().Usluga.ToList();
             ComboUsluga.SelectedValue = 1;
-
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
+            _currentKvitancya.DateTime = DateTime.Now;
+
             StringBuilder errors = new StringBuilder();
 
             if (string.IsNullOrWhiteSpace(_currentKvitancya.FioClienta))
